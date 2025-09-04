@@ -8,7 +8,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "deploy": "ng build --configuration production --base-href \"https://vermaabhay734.github.io/Black-Devil/\" && npx angular-cli-ghpages --dir=dist/black-devil/browser",
-    // "deploy": "ng build --configuration production --base-href \"https://vermaabhay734.github.io/Black-Devil/\" && npx angular-cli-ghpages --dir=dist/black-devil",
     "serve:ssr:black-devil": "node dist/black-devil/server/server.mjs"
   },
   "prettier": {
