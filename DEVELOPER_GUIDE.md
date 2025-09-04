@@ -216,3 +216,11 @@ If you encounter issues or need additional guidance:
 - Check TailwindCSS documentation at [tailwindcss.com](https://tailwindcss.com)
 - Review component-specific comments in the codebase
 - Contact the project maintainer at [contact@blackdevil.com](mailto:contact@blackdevil.com)
+
+## Have created the script for deployment just run the below command
+
+```bash
+npm run deploy
+```
+
+"deploy": "ng build --configuration production --base-href \"https://vermaabhay734.github.io/Black-Devil/\" && npx angular-cli-ghpages --dir=dist/black-devil/browser",
