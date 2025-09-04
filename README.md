@@ -1,6 +1,32 @@
-# BlackDevil
+# Black Devil - Astrology Consultation Website
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.0.
+![Black Devil Logo](/src/assets/logo.png)
+
+## Overview
+
+Black Devil is a modern, elegant astrology consultation web application built with Angular and TailwindCSS. It offers users personalized astrology readings, guidance, and spiritual advice through an intuitive and visually appealing interface.
+
+## Features
+
+- **Modern UI** with responsive design for both desktop and mobile devices
+- **Dark/Light Theme** toggle for personalized user experience
+- **Animated Star Background** for an immersive cosmic feel
+- **Multiple Service Offerings** including:
+  - Tarot Reading
+  - Zodiac Analysis
+  - Palm Reading
+  - Family Parenting
+  - Career Guidance
+  - Relationship Advice
+- **Interactive Forms** for users to ask questions and receive guidance
+- **Client Testimonials** carousel showcasing user feedback
+
+## Tech Stack
+
+- **Angular 17+**: Modern component-based architecture
+- **TailwindCSS**: Utility-first CSS framework for styling
+- **TypeScript**: Typed JavaScript for better development experience
+- **Responsive Design**: Mobile-first approach
 
 ## Development server
 
@@ -12,21 +38,7 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
+## Project Structure
 
 To build the project run:
 

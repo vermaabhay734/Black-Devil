@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+:root {
+  --cosmic-purple: #4B0082;
+  --cosmic-black: #121212;
+  --cosmic-gold: #FFD700;
+}
+
+/* Custom Logo Animation */
+@keyframes logo-glow {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.6));
+  }
+}
+
+.logo-glow {
+  animation: logo-glow 3s infinite ease-in-out;
+  --cosmic-blue: #1E3A8A;
+  --cosmic-indigo: #4F46E5;
+}
+
+body {
+  @apply bg-white text-cosmic-blue dark:bg-cosmic-black dark:text-cosmic-gold transition-colors duration-300;
+}
+
+/* Custom utility classes */
+.cosmic-gradient {
+  background: linear-gradient(135deg, #4B0082, #4F46E5);
+}
+
+.star-bg {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 2000' width='2000' height='2000'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='500' cy='500' r='1'/%3E%3Ccircle cx='1000' cy='1000' r='1'/%3E%3Ccircle cx='1500' cy='500' r='1'/%3E%3Ccircle cx='500' cy='1500' r='1'/%3E%3Ccircle cx='1500' cy='1500' r='1'/%3E%3C/g%3E%3C/svg%3E");
+}

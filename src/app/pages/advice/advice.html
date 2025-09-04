@@ -1,0 +1,49 @@
+<app-star-background [fullHeight]="false">
+  <div class="container mx-auto px-4 py-12 text-center text-white">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4">Your Personalized Advice</h1>
+    <p class="text-lg mb-4">This is where your cosmic guidance will appear after consultation.</p>
+  </div>
+</app-star-background>
+
+<section class="py-16 bg-white dark:bg-cosmic-black transition-colors duration-300">
+  <div class="container mx-auto px-4 max-w-4xl">
+    
+    <!-- When no advice is available yet -->
+    <div *ngIf="!hasAdvice" class="text-center py-12">
+      <div class="mb-8">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 mx-auto text-cosmic-purple dark:text-cosmic-gold opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      
+      <h2 class="text-2xl font-bold mb-4 text-cosmic-purple dark:text-cosmic-gold">Your personalized advice will appear here</h2>
+      <p class="mb-6 text-lg">Once our astrologer reviews your query, your cosmic guidance will be posted here. Check back soon!</p>
+      
+      <!-- Placeholder content -->
+      <div class="mt-8 border border-dashed border-cosmic-purple dark:border-cosmic-gold rounded-lg p-8 bg-purple-50 dark:bg-cosmic-black/30">
+        <p class="italic text-gray-600 dark:text-gray-300">Your personalized astrological reading and guidance will help you navigate your path with clarity and confidence.</p>
+      </div>
+    </div>
+    
+    <!-- When advice is available (placeholder for future functionality) -->
+    <div *ngIf="hasAdvice" class="bg-white dark:bg-cosmic-black shadow-lg rounded-lg border border-gray-200 dark:border-cosmic-purple p-8">
+      <h2 class="text-2xl font-bold mb-6 text-cosmic-purple dark:text-cosmic-gold">Your Cosmic Guidance</h2>
+      
+      <!-- Advice content would go here -->
+      <div class="prose prose-lg max-w-none dark:prose-invert">
+        <p>Your personalized advice will be displayed here after our astrologer reviews your question.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-12 cosmic-gradient text-white">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">Haven't Asked Your Question Yet?</h2>
+    <p class="mb-8 max-w-2xl mx-auto">Get personalized cosmic guidance by submitting your question. Our expert astrologer will provide insights tailored specifically to you.</p>
+    <a routerLink="/ask-question" class="inline-block bg-white text-cosmic-purple hover:bg-cosmic-gold hover:text-cosmic-purple font-bold py-3 px-8 rounded-full transform transition duration-300 hover:scale-105 hover:shadow-lg">
+      Ask Your Question Now
+    </a>
+  </div>
+</section>

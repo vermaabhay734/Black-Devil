@@ -1,0 +1,140 @@
+<app-star-background [fullHeight]="false">
+  <div class="container mx-auto px-4 py-12 text-center text-white">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4">Your Feedback</h1>
+    <p class="text-lg mb-4">Help us improve our cosmic services by sharing your experience.</p>
+  </div>
+</app-star-background>
+
+<section class="py-12 bg-white dark:bg-cosmic-black transition-colors duration-300">
+  <div class="container mx-auto px-4 max-w-2xl">
+    
+    <!-- Success Message (when form is submitted) -->
+    <div *ngIf="submitted" class="bg-green-100 dark:bg-green-900 border border-green-400 text-green-700 dark:text-green-200 px-4 py-4 rounded relative mb-8 animate-fade-in">
+      <h3 class="font-bold text-xl mb-2">Thank You for Your Feedback!</h3>
+      <p>We appreciate your thoughts and will use them to improve our services.</p>
+      <button (click)="resetForm()" class="mt-4 bg-cosmic-purple text-white py-2 px-4 rounded hover:bg-cosmic-indigo transition-colors duration-300">
+        Submit Another Feedback
+      </button>
+    </div>
+    
+    <!-- Feedback Form -->
+    <form *ngIf="!submitted" [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" class="bg-white dark:bg-cosmic-black shadow-lg rounded-lg border border-gray-200 dark:border-cosmic-purple p-8">
+      <h2 class="text-2xl font-bold mb-6 text-cosmic-purple dark:text-cosmic-gold text-center">Share Your Experience</h2>
+      
+      <!-- Name Field -->
+      <div class="mb-6">
+        <label for="name" class="block text-sm font-medium mb-2">Your Name</label>
+        <input 
+          type="text" 
+          id="name" 
+          formControlName="name"
+          class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-cosmic-purple bg-white dark:bg-cosmic-black/70 focus:outline-none focus:ring-2 focus:ring-cosmic-purple transition-colors duration-300"
+          [ngClass]="{'border-red-500': f['name'].touched && f['name'].errors}"
+        >
+        <div *ngIf="f['name'].touched && f['name'].errors" class="text-red-500 text-sm mt-1">
+          <span *ngIf="f['name'].errors['required']">Name is required</span>
+          <span *ngIf="f['name'].errors['minlength']">Name must be at least 2 characters</span>
+        </div>
+      </div>
+      
+      <!-- Email Field -->
+      <div class="mb-6">
+        <label for="email" class="block text-sm font-medium mb-2">Your Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          formControlName="email"
+          class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-cosmic-purple bg-white dark:bg-cosmic-black/70 focus:outline-none focus:ring-2 focus:ring-cosmic-purple transition-colors duration-300"
+          [ngClass]="{'border-red-500': f['email'].touched && f['email'].errors}"
+        >
+        <div *ngIf="f['email'].touched && f['email'].errors" class="text-red-500 text-sm mt-1">
+          <span *ngIf="f['email'].errors['required']">Email is required</span>
+          <span *ngIf="f['email'].errors['email']">Please enter a valid email</span>
+        </div>
+      </div>
+      
+      <!-- Rating -->
+      <div class="mb-6">
+        <label class="block text-sm font-medium mb-3">Your Rating</label>
+        <div class="flex items-center justify-center space-x-1">
+          <ng-container *ngFor="let i of [1, 2, 3, 4, 5]">
+            <button 
+              type="button" 
+              (click)="setRating(i)" 
+              class="text-2xl focus:outline-none"
+              [class.text-gray-300]="rating < i"
+              [class.text-cosmic-gold]="rating >= i"
+            >
+              ★
+            </button>
+          </ng-container>
+        </div>
+        <input type="hidden" formControlName="rating">
+        <div *ngIf="f['rating'].touched && f['rating'].errors" class="text-red-500 text-sm mt-1 text-center">
+          <span *ngIf="f['rating'].errors['required'] || f['rating'].errors['min']">Please select a rating</span>
+        </div>
+      </div>
+      
+      <!-- Comments Field -->
+      <div class="mb-8">
+        <label for="comments" class="block text-sm font-medium mb-2">Your Comments</label>
+        <textarea 
+          id="comments" 
+          rows="5" 
+          formControlName="comments"
+          class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-cosmic-purple bg-white dark:bg-cosmic-black/70 focus:outline-none focus:ring-2 focus:ring-cosmic-purple transition-colors duration-300 resize-none"
+          [ngClass]="{'border-red-500': f['comments'].touched && f['comments'].errors}"
+          placeholder="Tell us about your experience..."
+        ></textarea>
+        <div *ngIf="f['comments'].touched && f['comments'].errors" class="text-red-500 text-sm mt-1">
+          <span *ngIf="f['comments'].errors['required']">Comments are required</span>
+          <span *ngIf="f['comments'].errors['minlength']">Comments must be at least 10 characters</span>
+        </div>
+      </div>
+      
+      <!-- Submit Button -->
+      <button 
+        type="submit" 
+        class="w-full bg-cosmic-purple hover:bg-cosmic-indigo text-white font-bold py-3 px-8 rounded-full transform transition duration-300 hover:scale-105 hover:shadow-lg"
+      >
+        Submit Feedback
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-12 cosmic-gradient text-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">What Others Are Saying</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Testimonial 1 -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+        <div class="flex justify-between items-center mb-4">
+          <h4 class="font-semibold">Sarah L.</h4>
+          <div class="text-cosmic-gold">★★★★★</div>
+        </div>
+        <p>"The guidance I received was spot on! It helped me make an important career decision that turned out perfectly."</p>
+      </div>
+      
+      <!-- Testimonial 2 -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+        <div class="flex justify-between items-center mb-4">
+          <h4 class="font-semibold">Michael T.</h4>
+          <div class="text-cosmic-gold">★★★★☆</div>
+        </div>
+        <p>"I was skeptical at first, but the advice was surprisingly accurate and helped me navigate a difficult relationship issue."</p>
+      </div>
+      
+      <!-- Testimonial 3 -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+        <div class="flex justify-between items-center mb-4">
+          <h4 class="font-semibold">Elena R.</h4>
+          <div class="text-cosmic-gold">★★★★★</div>
+        </div>
+        <p>"The depth of insight was incredible. It felt like Black Devil truly understood my situation without me having to explain much."</p>
+      </div>
+    </div>
+  </div>
+</section>

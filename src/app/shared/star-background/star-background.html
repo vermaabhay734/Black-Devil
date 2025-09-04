@@ -1,0 +1,9 @@
+<div 
+  class="star-bg cosmic-gradient relative overflow-hidden w-full"
+  [ngClass]="{'min-h-screen': fullHeight, 'min-h-[300px]': !fullHeight}"
+>
+  <div class="absolute inset-0">
+    <div class="stars opacity-70"></div>
+  </div>
+  <ng-content></ng-content>
+</div>
