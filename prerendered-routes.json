@@ -1,0 +1,9 @@
+{
+  "routes": {
+    "/Black-Devil": {},
+    "/Black-Devil/advice": {},
+    "/Black-Devil/ask-question": {},
+    "/Black-Devil/contact": {},
+    "/Black-Devil/feedback": {}
+  }
+}
