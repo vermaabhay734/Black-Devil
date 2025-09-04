@@ -6,7 +6,7 @@ This document provides guidance for developers who want to modify or extend the 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/black-devil.git
+   git clone https://github.com/vermaabhay734/black-devil.git
    cd black-devil
    ```
 
